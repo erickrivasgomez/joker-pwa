@@ -1,5 +1,5 @@
 var url = 'https://sv443.net/jokeapi/v2/joke/Programming?blacklistFlags=racist,sexist'
-const jokeSelector = document.querySelector('#joke');.
+const jokeSelector = document.querySelector('#joke');
 const setupSelector = document.querySelector('#setup');
 const deliverySelector = document.querySelector('#delivery');
 let cache = []
