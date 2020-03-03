@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Joker - Progressive Web App</title>
+</head>
+
+<body>
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <h3 class="masthead-brand">Joker - Progressive Web App</h3>
+        <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link active" href="">New joke</a>
+        </nav>
+      </div>
+    </header>
+
+    <main role="main" class="inner cover text-center">
+      <h4 id="joke" class="cover-heading"></h4>
+      <h4 id="setup" class="cover-heading"></h4>
+      <p id="delivery" class="lead"></p>
+      <p class="lead">
+        <a href="" class="btn btn-lg btn-secondary">New Joke</a>
+      </p>
+    </main>
+
+    <footer class="mastfoot mt-auto text-center">
+      <div class="inner">
+        <p>View Joker - Progressive Web App on <a href="https://github.com/erickrivasgomez/joker-pwa">GitHub</a>, by <a
+            href="https://github.com/erickrivasgomez">erickrivasgomez</a>.</p>
+      </div>
+    </footer>
+  </div>
+  <!-- Optional JavaScript -->
+  <script>
+    const Http = new XMLHttpRequest();
+    var url = 'https://sv443.net/jokeapi/v2/joke/Programming?blacklistFlags=racist,sexist'
+    Http.open("GET", url);
+    Http.send();
+
+    Http.onreadystatechange = (e) => {
+      let data = JSON.parse(responseText)
+      if (data.joke) {
+        jokeSelector.innerHTML = data.joke
+      } else {
+        setupSelector.innerHTML = data.setup
+        deliverySelector.innerHTML = data.delivery
+      }
+    }
+  </script>
+  <script src="app.js"></script>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
