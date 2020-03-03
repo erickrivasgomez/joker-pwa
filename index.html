@@ -41,23 +41,14 @@
     </footer>
   </div>
   <!-- Optional JavaScript -->
+  <script src="./app.js"></script>
   <script>
-    const Http = new XMLHttpRequest();
-    var url = 'https://sv443.net/jokeapi/v2/joke/Programming?blacklistFlags=racist,sexist'
-    Http.open("GET", url);
-    Http.send();
-
-    Http.onreadystatechange = (e) => {
-      let data = JSON.parse(responseText)
-      if (data.joke) {
-        jokeSelector.innerHTML = data.joke
-      } else {
-        setupSelector.innerHTML = data.setup
-        deliverySelector.innerHTML = data.delivery
-      }
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js')
+        .then(reg => console.log('Registro de SW exitoso', reg))
+        .catch(err => console.warn('Error al tratar de registrar el sw', err))
     }
   </script>
-  <script src="app.js"></script>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
