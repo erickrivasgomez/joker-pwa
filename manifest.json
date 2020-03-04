@@ -5,7 +5,7 @@
     "background_color": "#2E4891",
     "display": "standalone",
     "Scope": "/",
-    "start_url": ".",
+    "start_url": "./?utm_source=web_app_manifest",
     "icons": [
       {
         "src": "images/icons/icon-72x72.svg",
