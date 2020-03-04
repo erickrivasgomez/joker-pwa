@@ -13,6 +13,7 @@ const urlsToCache = [
   './style.css',
   './app.js',
   './index.html',
+  './images/icons/icon.svg',
   'https://sv443.net/jokeapi/v2/joke/Programming?blacklistFlags=racist,sexist'
 ]
 
