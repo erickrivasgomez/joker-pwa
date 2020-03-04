@@ -10,7 +10,7 @@ function getDataFromNetwork(url) {
 	fetch(url)
 		.then(Response => Response.json())
 		.then(data => {
-			data = JSON.parse(data)
+			//data = JSON.parse(data)
 			if (data.joke) {
 				jokeSelector.innerHTML = data.joke
 			} else {
