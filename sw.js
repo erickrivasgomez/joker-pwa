@@ -3,7 +3,6 @@ let cache = []
 
 //asignar un nombre y versión al cache
 const CACHE_NAME = 'v1_PWA';
-const Data_CACHE_NAME = 'api-chache-v1';
 
 const urlsToCache = [
   './',
@@ -62,7 +61,7 @@ self.addEventListener('fetch', e => {
     e.respondWith(
       fetch(e.request)
         .then(function (response) {
-          return caches.open(Data_CACHE_NAME).then(function (cache) {
+          return caches.open(CACHE_NAME).then(function (cache) {
             cache.put(e.request.url, response.clone());
             console.log(response + 'Cloning');
             return response;
