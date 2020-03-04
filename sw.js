@@ -1,4 +1,4 @@
-var url = 'https://sv443.net/jokeapi/v2/joke/Dark'
+var url = 'https://sv443.net/jokeapi/v2/joke/Programming?blacklistFlags=racist,sexist'
 let cache = []
 
 //asignar un nombre y versión al cache
@@ -14,7 +14,7 @@ const urlsToCache = [
   './app.js',
   './index.html',
   './images/icons/icon.svg',
-  'https://sv443.net/jokeapi/v2/joke/Dark'
+  'https://sv443.net/jokeapi/v2/joke/Programming?blacklistFlags=racist,sexist'
 ]
 
 //durante la fase de instalación, generalmente se almacena en caché los activos estáticos
