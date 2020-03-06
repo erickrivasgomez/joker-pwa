@@ -42,5 +42,5 @@ function getDataFromCache() {
 		});
 }
 
-getDataFromCache()
 getDataFromNetwork(url)
+getDataFromCache()
