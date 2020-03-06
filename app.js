@@ -6,30 +6,21 @@ let cache = []
 
 function getDataFromNetwork(url) {
 	var req = new Request(url)
-	let jokes = []
 
-	for (let i = 0; i < 15; i++) {
-		fetch(url)
-			.then(Response => Response.json())
-			.then(data => {
-				//console.log(data)
-				jokes[i] = data
-				//data = JSON.parse(data)
-			})
-			.then(e => {
-			})
-			.catch(err => console.log(err))
-		}
-		console.log(jokes)
-		joke = jokes.pop()
-		if (joke.joke) {
-			jokeSelector.innerHTML = joke.joke
-		} else {
-			setupSelector.innerHTML = joke.setup
-			deliverySelector.innerHTML = joke.delivery
-		}
-		cache = jokes
-	}
+	fetch(url)
+		.then(Response => Response.json())
+		.then(data => {
+			//data = JSON.parse(data)
+			if (data.joke) {
+				jokeSelector.innerHTML = data.joke
+			} else {
+				setupSelector.innerHTML = data.setup
+				deliverySelector.innerHTML = data.delivery
+			}
+			cache = data
+		})
+		.catch(err => console.log(err))
+}
 
 
 function getDataFromCache() {
